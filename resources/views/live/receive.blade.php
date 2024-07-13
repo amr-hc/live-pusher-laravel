@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>receive</title>
     @vite('resources/js/app.js')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
 </head>
 <body>
     <p>Reveive Page : </p>
@@ -12,7 +14,7 @@
 
 
 <script type="module">
-    Echo.channel('my-channel').listen('MyEvent', (e)=>{
+    Echo.private('my-private').listen('MyPrivate', (e)=>{
         console.log(e);
     })
 

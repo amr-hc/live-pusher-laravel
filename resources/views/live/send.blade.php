@@ -10,6 +10,10 @@
     @csrf
   <label for="message">Write:</label><br>
   <input type="text" id="message" name="message" value="message"><br>
+  <br>
+  <label for="userid">User id:</label><br>
+  <input type="text" id="userid" name="userid" value="2"><br>
+
   <input type="submit" value="Submit">
 </form> 
 </body>

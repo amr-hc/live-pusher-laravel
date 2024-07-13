@@ -32,6 +32,13 @@ window.Echo = new Echo({
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
     encrypted : true,
-    cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER
+    cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
+    authEndpoint: '/broadcasting/auth',
+    auth: {
+        headers: {
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+        }
+    }
 
 });
+Pusher.logToConsole = true;
