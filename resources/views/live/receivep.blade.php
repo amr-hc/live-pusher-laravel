@@ -27,7 +27,7 @@
             authEndpoint: '/broadcasting/auth', // Default auth endpoint
             auth: {
                 headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    'X-CSRF-TOKEN': "{{csrf_token()}}"
                 }
             }
         });
